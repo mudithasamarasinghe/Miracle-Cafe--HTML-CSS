@@ -1,0 +1,83 @@
+<!DOCTYPE HTML>
+
+<html>
+
+
+
+<head>
+
+<style>
+
+#car {
+
+position: relative;
+
+cursor: pointer;
+
+top: 155px;
+
+
+
+}
+
+
+
+#fuel{
+
+position: absolute;
+
+width: 300px;
+
+height: 256px;
+
+top: 0px;
+
+right: 0px;
+
+}
+
+
+
+
+
+</style>
+
+</head>
+
+
+
+<body>
+
+
+
+<img id="car" src="car.png">
+
+<img id="fuel" src="gs.webp">
+
+<script>
+    car.onclick= function (){
+        // get the start time
+        let start= Date.now(); //remember start time
+        let timer= setInterval(function (){
+            //current time
+            let timePassed= Date.now()-start;
+            car.style.left= timePassed/ 5 + 'px';
+            //finish the animation
+            if (timePassed> 5500) clearInterval(timer);
+            //execution interval
+        },20);
+    }
+    // // move the car in repeated intervals
+    // setInterval()
+    // clearInterval()
+    //
+    // // 1s= 1000 ms
+    //
+    // myInterval= setInterval(function,millisecond)
+    // clearInterval(myInterval)
+
+</script>
+
+</body>
+
+</html>

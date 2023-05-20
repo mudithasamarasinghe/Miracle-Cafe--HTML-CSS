@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--    link the google fonts webpage-->
+    <link href='https://fonts.googleapis.com/css?family=Sofia' rel='stylesheet'>
+    <link rel="stylesheet" href="cafe.css">
+
+    <meta charset="UTF-8">
+    <title>Miracle Cafe</title>
+
+</head>
+<body class="body">
+    <h1>Miracle Cafe</h1>
+
+<!--2. image galleries in a carousel format-->
+<!-- Slideshow container -->
+<div class="slideshow-container">
+
+    <!-- Full-width images with number and caption text -->
+    <div class="mySlides fade">
+        <div class="numbertext">1 / 5</div>
+        <img src="https://i.pinimg.com/564x/c4/a4/db/c4a4db3d8f46f5245ec173e562909a88.jpg"
+             style="height:600px; width: 500px">
+        <div class="text">Exterior View</div>
+    </div>
+
+    <div class="mySlides fade">
+        <div class="numbertext">2 / 5</div>
+        <img src="https://i.pinimg.com/564x/2b/eb/c9/2bebc9a95e2a4bbe4dc54e7da03ea98d.jpg"
+             style="height:600px; width: 500px">
+        <div class="text">Interior View</div>
+    </div>
+
+    <div class="mySlides fade">
+        <div class="numbertext">3 / 5</div>
+        <img src="https://i.pinimg.com/564x/db/de/53/dbde53261d580f7d7bd0d1dc0a6fb156.jpg"
+             style="height:600px; width: 500px">
+        <div class="text">Food</div>
+    </div>
+
+    <div class="mySlides fade">
+        <div class="numbertext">4 / 5</div>
+        <img src="https://i.pinimg.com/564x/55/d8/fe/55d8feb84b4bb535e85195470a12dc56.jpg"
+             style="height:600px; width: 500px">
+        <div class="text">Latte Art</div>
+    </div>
+
+    <div class="mySlides fade">
+        <div class="numbertext">5 / 5</div>
+        <img src="https://i.pinimg.com/564x/9f/8c/1d/9f8c1da79c57e352bb67cef545ef7ad6.jpg"
+             style="height:600px; width: 500px">
+        <div class="text">Coffee</div>
+    </div>
+
+    <!-- Next and previous buttons -->
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+</div>
+
+<!--2. end-->
+<br>
+<!--4. playing audio or video in the middle of the web page.-->
+<div style="
+    display: flex;
+    align-items: center;
+    justify-content: center;">
+    <audio controls autoplay>
+        <source src="./audio.mp3" type="audio/mp3">
+    </audio>
+
+</div>
+
+<br><br><br><br><br>
+<!--4. end-->
+
+    <!--5. increase and decrease the image size-->
+    <div class="zoom-container">
+        <button type="button" onclick="zoomin()" style="width: 100px; margin-left: 190px;"><img src="https://cdn-icons-png.flaticon.com/512/159/159084.png" width="20%%" align="center"></button>
+        <button type="button" onclick="zoomout()" style="width: 100px; margin-left: 20px;"><img src="https://cdn-icons-png.flaticon.com/512/159/159096.png" width="20%%" align="center"></button>
+        <br><br>
+        <img src="https://img.freepik.com/free-vector/people-visit-cat-cafe-characters-sitting-tables_107791-11105.jpg?size=626&ext=jpg&uid=R75080243&ga=GA1.2.804009322.1645256263" style="width: 120%"
+             id='zinout'>
+    </div>
+<!--5. end-->
+
+    <br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br>
+
+<!--3. image to the blog’s left bottom corner and when you click the image it should move to the right bottom corner.-->
+<div>
+    <img src=".\astronaut1.png"
+         id='coffee' onClick="move_img()"
+         style="width:20%;position:absolute; left: 0px; bottom: -800px;">
+</div>
+<!--3. end-->
+
+<!--“Contact Us” form-->
+
+<!--validate texts when submitting-->
+    <div class="box">
+<form name="contact_us" method="post" action="" onsubmit="return contact_us_validation()"
+      style="margin-bottom: 10px">
+        <table>
+            <tr>
+                <td><h3>Contact Us</h3></td>
+            </tr>
+            <tr>
+                <td><label id="labelName">Name: </label></td>
+                <td><input type="text" name="stuName" id="stuName" placeholder="abc"></input></td>
+                <td><label id="txtHintName" style="color: black;"></label></td>
+            </tr>
+            <tr>
+                <td><label id="labelNo">Telephone Number: </label></td>
+                <td><input type="text" name="telephoneNo" id="telephoneNo" placeholder="0123456789"></input></td>
+                <td><label id="txtHintTNum" style="color: black;"></label></td>
+            </tr>
+            <tr>
+                <td><label id="labelEmail">E-mail: </label></td>
+                <td><input type="text" name="email" id="email" size="20" placeholder="abc@gmail.com"></input></td>
+                <td><label id="txtHintEmail" style="color: black;"></label></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><input type="reset" value="Reset" class="btn"/>
+                <input type="submit" value="Contact" class="btn"/></td>
+            </tr>
+        </table>
+</form>
+    </div>
+
+    <br>
+
+    <video controls autoplay>  <source src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4" type="video/mp4"></video>
+<script type="text/javascript">
+
+    // for zoomin and zoomout
+    function zoomin() {
+        var GFG = document.getElementById("zinout");
+        var currWidth = GFG.clientWidth;
+        GFG.style.width = (currWidth + 50) + "px";
+    }
+
+    function zoomout() {
+        var GFG = document.getElementById("zinout");
+        var currWidth = GFG.clientWidth;
+        GFG.style.width = (currWidth - 50) + "px";
+    }
+
+    // displaying the images one by one
+    let slideIndex = 1;
+    showSlides(slideIndex);
+
+    // Next/previous controls
+    function plusSlides(n) {
+        showSlides(slideIndex += n);
+    }
+
+    // Thumbnail image controls
+    function currentSlide(n) {
+        showSlides(slideIndex = n);
+    }
+
+    function showSlides(n) {
+        let i;
+        let slides = document.getElementsByClassName("mySlides");
+        if (n > slides.length) {
+            slideIndex = 1
+        }
+        if (n < 1) {
+            slideIndex = slides.length
+        }
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+        slides[slideIndex - 1].style.display = "block"; //block allows to display
+    }
+
+    // image moving
+    function move_img() {
+        // get the start time
+        let start = Date.now(); //remember start time
+        let timer = setInterval(function () {
+            //current time
+            let timePassed = Date.now() - start;
+            coffee.style.left = timePassed / 4.5 + 'px';
+            //finish the animation
+            if (timePassed > 5500) clearInterval(timer);
+            //execution interval
+        }, 20);
+    }
+
+    function contact_us_validation() {
+        var studentName = document.getElementById("stuName");
+        var telephoneNumber = document.getElementById("telephoneNo");
+        var emailAddress = document.getElementById("email");
+
+        // name validation
+        if (studentName.value.length < 2 || !/^[A-Za-z\s]+$/.test(studentName.value)) {
+            txtHintName.innerHTML = "<label style='color:black;font-size: 14px;' top-margin:0px; bottom-margin:0px>Name should contain at least 2 characters</label>";
+            studentName.focus()  // if the condition is not fulfilled return to the name field
+            studentName.required = true; // cannot be empty
+            return false;
+        } else {
+            txtHintName.innerHTML = "";
+            studentName.required = false;
+        }
+
+        // telNo validation
+        if (telephoneNumber.value.length < 10 ||/^\+(?:[0-9] ?){6,14}[0-9]$/.test(telephoneNumber.value)) {
+            txtHintTNum.innerHTML = "<label style='color:black;font-size: 14px;'>Invalid telephone number</label>";
+            telephoneNumber.focus()  // if the condition is not fulfilled return to the telephone number field
+            telephoneNumber.required = true; // cannot be empty
+            return false;
+        } else {
+            txtHintTNum.innerHTML = "";
+            telephoneNumber.required = false;
+        }
+
+        // email validation
+        if (emailAddress.value.len > 20 || !/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(emailAddress.value)) {
+            txtHintEmail.innerHTML = "<label style='color:black;font-size: 14px;'>Invalid email address</label>";
+            emailAddress.focus()  // if the condition is not fulfilled return to the Email field
+            emailAddress.required = true; // cannot be empty
+            return false;
+        } else {
+            txtHintEmail.innerHTML = "";
+            emailAddress.required = false;
+        }
+
+    }
+</script>
+</body>
+</html>
